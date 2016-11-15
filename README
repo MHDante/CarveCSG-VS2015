@@ -1,5 +1,5 @@
 Project: Carve, CSG library
-Written by: 
+Written by: Tobias Sargeant
 
 Modified to compile on Visual Studio 2015.
 This removes the BOOST deps, as well as changes some unsupported Types.
