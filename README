@@ -1,0 +1,12 @@
+Project: Carve, CSG library
+Written by: 
+
+Modified to compile on Visual Studio 2015.
+This removes the BOOST deps, as well as changes some unsupported Types.
+
+Based on code at 
+https://github.com/folded/carve
+https://github.com/dfelinto/blender/tree/master/extern/carve
+https://github.com/barche/carve
+
+Code license is LGPL

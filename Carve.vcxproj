@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{04CA1ACC-DC11-46E3-B534-99F0F450202A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SolutionDir)\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="carve-capi.cc" />
+    <ClCompile Include="carve-util.cc" />
+    <ClCompile Include="lib\carve.cpp" />
+    <ClCompile Include="lib\convex_hull.cpp" />
+    <ClCompile Include="lib\csg.cpp" />
+    <ClCompile Include="lib\csg_collector.cpp" />
+    <ClCompile Include="lib\face.cpp" />
+    <ClCompile Include="lib\geom2d.cpp" />
+    <ClCompile Include="lib\geom3d.cpp" />
+    <ClCompile Include="lib\intersect.cpp" />
+    <ClCompile Include="lib\intersection.cpp" />
+    <ClCompile Include="lib\intersect_classify_edge.cpp" />
+    <ClCompile Include="lib\intersect_classify_group.cpp" />
+    <ClCompile Include="lib\intersect_debug.cpp" />
+    <ClCompile Include="lib\intersect_face_division.cpp" />
+    <ClCompile Include="lib\intersect_group.cpp" />
+    <ClCompile Include="lib\intersect_half_classify_group.cpp" />
+    <ClCompile Include="lib\math.cpp" />
+    <ClCompile Include="lib\mesh.cpp" />
+    <ClCompile Include="lib\octree.cpp" />
+    <ClCompile Include="lib\pointset.cpp" />
+    <ClCompile Include="lib\polyhedron.cpp" />
+    <ClCompile Include="lib\polyline.cpp" />
+    <ClCompile Include="lib\tag.cpp" />
+    <ClCompile Include="lib\timing.cpp" />
+    <ClCompile Include="lib\triangulator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="carve-capi.h" />
+    <ClInclude Include="carve-util.h" />
+    <ClInclude Include="include\carve\aabb.hpp" />
+    <ClInclude Include="include\carve\aabb_impl.hpp" />
+    <ClInclude Include="include\carve\carve.hpp" />
+    <ClInclude Include="include\carve\cbrt.h" />
+    <ClInclude Include="include\carve\classification.hpp" />
+    <ClInclude Include="include\carve\collection.hpp" />
+    <ClInclude Include="include\carve\collection\unordered.hpp" />
+    <ClInclude Include="include\carve\collection\unordered\fallback_impl.hpp" />
+    <ClInclude Include="include\carve\collection\unordered\libstdcpp_impl.hpp" />
+    <ClInclude Include="include\carve\collection\unordered\std_impl.hpp" />
+    <ClInclude Include="include\carve\collection\unordered\tr1_impl.hpp" />
+    <ClInclude Include="include\carve\collection\unordered\vcpp_impl.hpp" />
+    <ClInclude Include="include\carve\collection_types.hpp" />
+    <ClInclude Include="include\carve\colour.hpp" />
+    <ClInclude Include="include\carve\config.h" />
+    <ClInclude Include="include\carve\convex_hull.hpp" />
+    <ClInclude Include="include\carve\csg.hpp" />
+    <ClInclude Include="include\carve\csg_triangulator.hpp" />
+    <ClInclude Include="include\carve\debug_hooks.hpp" />
+    <ClInclude Include="include\carve\djset.hpp" />
+    <ClInclude Include="include\carve\edge_decl.hpp" />
+    <ClInclude Include="include\carve\edge_impl.hpp" />
+    <ClInclude Include="include\carve\exact.hpp" />
+    <ClInclude Include="include\carve\faceloop.hpp" />
+    <ClInclude Include="include\carve\face_decl.hpp" />
+    <ClInclude Include="include\carve\face_impl.hpp" />
+    <ClInclude Include="include\carve\geom.hpp" />
+    <ClInclude Include="include\carve\geom2d.hpp" />
+    <ClInclude Include="include\carve\geom3d.hpp" />
+    <ClInclude Include="include\carve\geom_impl.hpp" />
+    <ClInclude Include="include\carve\gnu_cxx.h" />
+    <ClInclude Include="include\carve\heap.hpp" />
+    <ClInclude Include="include\carve\input.hpp" />
+    <ClInclude Include="include\carve\interpolator.hpp" />
+    <ClInclude Include="include\carve\intersection.hpp" />
+    <ClInclude Include="include\carve\iobj.hpp" />
+    <ClInclude Include="include\carve\kd_node.hpp" />
+    <ClInclude Include="include\carve\math.hpp" />
+    <ClInclude Include="include\carve\math_constants.hpp" />
+    <ClInclude Include="include\carve\matrix.hpp" />
+    <ClInclude Include="include\carve\mesh.hpp" />
+    <ClInclude Include="include\carve\mesh_impl.hpp" />
+    <ClInclude Include="include\carve\mesh_ops.hpp" />
+    <ClInclude Include="include\carve\mesh_simplify.hpp" />
+    <ClInclude Include="include\carve\octree_decl.hpp" />
+    <ClInclude Include="include\carve\octree_impl.hpp" />
+    <ClInclude Include="include\carve\pointset.hpp" />
+    <ClInclude Include="include\carve\pointset_decl.hpp" />
+    <ClInclude Include="include\carve\pointset_impl.hpp" />
+    <ClInclude Include="include\carve\pointset_iter.hpp" />
+    <ClInclude Include="include\carve\poly.hpp" />
+    <ClInclude Include="include\carve\polyhedron_base.hpp" />
+    <ClInclude Include="include\carve\polyhedron_decl.hpp" />
+    <ClInclude Include="include\carve\polyhedron_impl.hpp" />
+    <ClInclude Include="include\carve\polyline.hpp" />
+    <ClInclude Include="include\carve\polyline_decl.hpp" />
+    <ClInclude Include="include\carve\polyline_impl.hpp" />
+    <ClInclude Include="include\carve\polyline_iter.hpp" />
+    <ClInclude Include="include\carve\poly_decl.hpp" />
+    <ClInclude Include="include\carve\poly_impl.hpp" />
+    <ClInclude Include="include\carve\random\random.h" />
+    <ClInclude Include="include\carve\rescale.hpp" />
+    <ClInclude Include="include\carve\rtree.hpp" />
+    <ClInclude Include="include\carve\spacetree.hpp" />
+    <ClInclude Include="include\carve\tag.hpp" />
+    <ClInclude Include="include\carve\timing.hpp" />
+    <ClInclude Include="include\carve\tree.hpp" />
+    <ClInclude Include="include\carve\triangle_intersection.hpp" />
+    <ClInclude Include="include\carve\triangulator.hpp" />
+    <ClInclude Include="include\carve\triangulator_impl.hpp" />
+    <ClInclude Include="include\carve\util.hpp" />
+    <ClInclude Include="include\carve\vcpp_config.h" />
+    <ClInclude Include="include\carve\vector.hpp" />
+    <ClInclude Include="include\carve\vertex_decl.hpp" />
+    <ClInclude Include="include\carve\vertex_impl.hpp" />
+    <ClInclude Include="include\carve\win32.h" />
+    <ClInclude Include="lib\csg_collector.hpp" />
+    <ClInclude Include="lib\csg_data.hpp" />
+    <ClInclude Include="lib\csg_detail.hpp" />
+    <ClInclude Include="lib\intersect_classify_common.hpp" />
+    <ClInclude Include="lib\intersect_classify_common_impl.hpp" />
+    <ClInclude Include="lib\intersect_common.hpp" />
+    <ClInclude Include="lib\intersect_debug.hpp" />
+    <ClInclude Include="patches\files\config.h" />
+    <ClInclude Include="patches\files\random.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
